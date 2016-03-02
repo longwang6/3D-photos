@@ -1,0 +1,142 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: #fff;
+	color: #555;
+	font-family: 'Avenir Next' , 'Lantinghei SC';
+	font-size: 14px;
+	-webkit-font-smoothing:antialiased;
+}
+.wrap{
+	width: 100%;
+	height: 600px;
+	background-color: #333;
+	position: absolute;
+	top: 50%;
+	margin-top: -300px;
+	overflow: hidden;	
+}
+
+// 海报样式
+.photo{
+	 width: 260px;
+	 height: 320px;
+	 position: absolute;
+	 z-index: 1;
+	 box-shadow: 0 0 1px rgba(0,0,0,0.01);
+	 -webkit-perspective: 800px;
+	 transition: .5s all;
+	  position: absolute;
+	 left: 50%;
+	 top: 50%;
+	 margin: -160px 0 0 -130px;
+	 .side{
+		 width: 100%;
+		 height: 100%;
+		 background-color: #eee;
+		 position: absolute;
+		 top: 0;
+		 right: 0;
+		 padding: 10px;
+	     box-sizing: border-box;
+		 -webkit-backface-visibility: hidden;
+		 backface-visibility: hidden;
+	 }
+	 .side{
+		 .image{
+			 width: 100%;
+			 height: 250px;
+			 line-height: 250px;
+			 overflow: hidden;
+			 vertical-align: middle;
+			 img{
+				 width: 100%;
+			 }
+		  }
+		  .caption{
+			  text-align: center;
+			  font-size: 16px;
+			  line-height: 50px;
+		  }
+	 }
+	
+}
+
+.photo_center{
+	 position: absolute;
+	 left: 50%;
+	 top: 50%;
+	 margin: -160px 0 0 -130px;
+	 z-index: 999;
+}
+.photo-wrap{
+	position: absolute; 
+	width: 100%;
+	height: 100%;
+	transition: all .2s;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+    -webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+    .side-front{
+		-webkit-transform: rotateY(0deg);	 
+		-moz-transform: rotateY(0deg);	 
+	 }
+	 .side-back{
+		-webkit-transform: rotateY(180deg);	
+		-moz-transform: rotateY(180deg);	
+	 }
+}
+.photo-front{
+	-webkit-transform: rotateY(0deg);	
+	-moz-transform: rotateY(0deg);	
+}
+.photo-back{
+	-webkit-transform: rotateY(180deg);	
+	-moz-transform: rotateY(180deg);	
+}
+
+.nav{
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	text-align: center;
+	z-index: 9999;
+	 span{
+		 display: inline-block;
+		 width: 30px;
+		 height: 30px;
+		 cursor: pointer;
+		 background-color: #f00;
+		 border-radius: 80px;
+		 -webkit-border-radius: 80px;
+		 transform: scale(.6);
+		 -webkit-transform: scale(.6);
+		 transition: .5s all;
+		 -webkit-transition: .5s all;
+		 -moz-transition: .5s all;
+		 &.i_current{
+		     transform: scale(1);
+		    -webkit-transform: scale(1);
+		 }
+		  &.i_back{
+		    background-color: #ccc
+		 }
+	 }
+}
+.photo-wrap{
+	-webkit-transform-origin: 0% 50%;
+	-moz-transform-origin: 0% 50%;
+}
+.photo-wrap.photo-front{
+	-webkit-transform: translate(0px , 0px) rotateY(0deg);
+	-moz-transform: translate(0px , 0px) rotateY(0deg);
+}
+.photo-wrap.photo-back{
+	-webkit-transform: translate(260px , 0px) rotateY(180deg);
+	-moz-transform: translate(260px , 0px) rotateY(180deg);
+}
